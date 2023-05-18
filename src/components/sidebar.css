@@ -1,4 +1,54 @@
+.list-icons {
+  height: 13px;
+  width: auto;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+ul {
+  margin-top: 30px;
+}
+
+.custom-class {
+  display: flex;
+  justify-content: center;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background: #ffffff;
+  border: 0.56px solid #e2def9;
+  box-shadow: -28px 22px 45px rgba(27, 29, 66, 0.139423);
+  border-radius: 10px;
+}
+
+.custom-class a {
+  padding: 10px 35px 10px 35px;
+}
+
+.custom-class a .list-icons {
+  margin-left: -6px;
+}
+.custom-class a .arrow {
+  margin-left: 30px;
+}
+
 .logo {
-  width: 160px;
-  padding: 30px 40px 47px 10px;
+  margin-left: 20px;
+  margin-top: 40px;
+  height: 40px;
+}
+
+.main-div {
+  background-color: #20b96f !important;
 }

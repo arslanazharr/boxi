@@ -1,21 +1,19 @@
 import { Fragment, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/20/solid";
-
-import campaigns from "../graphics/sidebar icons/campaigns.png";
-import drive from "../graphics/sidebar icons/drive.png";
-import list from "../graphics/sidebar icons/list.png";
-import production from "../graphics/sidebar icons/production.png";
-import settings from "../graphics/sidebar icons/settings.png";
-import team from "../graphics/sidebar icons/team.png";
-import greenArrow from "../graphics/sidebar icons/greenArrow.png";
-import whiteArrow from "../graphics/sidebar icons/whiteArrow.png";
-import logo from "../graphics/logo.png";
-
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import campaigns from "../graphics/sidebar icons/campaigns.svg";
+import drive from "../graphics/sidebar icons/drive.svg";
+import list from "../graphics/sidebar icons/list.svg";
+import production from "../graphics/sidebar icons/production.svg";
+import settings from "../graphics/sidebar icons/settings.svg";
+import team from "../graphics/sidebar icons/team.svg";
+import greenArrow from "../graphics/sidebar icons/greenArrow.svg";
+import whiteArrow from "../graphics/sidebar icons/whiteArrow.svg";
+import arrowDown from "../graphics/header icons/arrowDown.svg";
+import logo from "../graphics/logo.svg";
+import search from "../graphics/header icons/search.svg";
+import notifications from "../graphics/header icons/notifications.svg";
+import profileImg from "../graphics/header icons/profile.svg";
 import "./sidebar.css";
 
 const Ldata = [
@@ -153,6 +151,7 @@ export default function Example() {
         </Transition.Root>
 
         {/* Static sidebar for desktop */}
+
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-60 lg:flex-col ">
           <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-green-600 main-div">
             <div className="flex h-16 shrink-0 items-center">
@@ -190,10 +189,10 @@ export default function Example() {
         </div>
 
         <div className="lg:pl-72">
-          <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+          <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4  px-4  sm:gap-x-6 sm:px-6 lg:px-8">
             <button
               type="button"
-              className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
+              className="toggle -m-2.5 p-2.5 text-gray-700 lg:hidden"
               onClick={() => setSidebarOpen(true)}
             >
               <span className="sr-only">Open sidebar</span>
@@ -202,23 +201,26 @@ export default function Example() {
 
             {/* Separator */}
             <div
-              className="h-6 w-px bg-gray-900/10 lg:hidden"
+              className="seperator h-6 w-px bg-black lg:hidden"
               aria-hidden="true"
             />
 
-            <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
-              <form className="relative flex flex-1" action="#" method="GET">
+            <div className="search flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
+              <form className="relative flex flex-1" action="#">
                 <label htmlFor="search-field" className="sr-only">
                   Search
                 </label>
-                <MagnifyingGlassIcon
-                  className="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400"
+
+                <img
+                  className="search-icon pointer-events-none absolute inset-y-0 left-0 h-full w-4 text-gray-400 ml-3"
                   aria-hidden="true"
+                  src={search}
+                  alt=""
                 />
                 <input
                   id="search-field"
                   className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
-                  placeholder="Search..."
+                  placeholder="Search"
                   type="search"
                   name="search"
                 />
@@ -229,32 +231,30 @@ export default function Example() {
                   className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500"
                 >
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <img src={notifications} alt="" />
                 </button>
                 {/* Separator */}
-                <div
-                  className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10"
-                  aria-hidden="true"
-                />
 
                 <Menu as="div" className="relative">
                   <Menu.Button className="-m-1.5 flex items-center p-1.5">
                     <span className="sr-only">Open user menu</span>
                     <img
-                      className="h-8 w-8 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      className="lg:ml-2 h-8 w-8 rounded-full bg-gray-50"
+                      src={profileImg}
                       alt=""
                     />
                     <span className="hidden lg:flex lg:items-center">
                       <span
-                        className="ml-4 text-sm font-semibold leading-6 text-gray-900"
+                        className="userName text-sm font-semibold leading-6 text-gray-900"
                         aria-hidden="true"
                       >
-                        Tom Cook
+                        Danielle Campbell
                       </span>
-                      <ChevronDownIcon
-                        className="ml-2 h-5 w-5 text-gray-400"
+                      <img
+                        className="ml-6 h-5 w-3 text-gray-400"
                         aria-hidden="true"
+                        src={arrowDown}
+                        alt=""
                       />
                     </span>
                   </Menu.Button>

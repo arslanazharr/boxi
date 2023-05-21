@@ -10,6 +10,11 @@
   padding: 0;
 }
 
+<<<<<<< HEAD
 body {
   background: #dadada;
+=======
+body {  
+  background: #dadada !important;
+>>>>>>> 96818a759ed67f51259dbd1be4c0539510e44c57
 }

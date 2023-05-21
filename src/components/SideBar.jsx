@@ -1,9 +1,7 @@
 import { Fragment, useState } from "react";
-<<<<<<< HEAD
+
 import { Dialog, Transition } from "@headlessui/react";
-=======
-import { Dialog, Menu, Transition } from "@headlessui/react";
->>>>>>> 96818a759ed67f51259dbd1be4c0539510e44c57
+
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import campaigns from "../graphics/sidebar icons/campaigns.svg";
 import drive from "../graphics/sidebar icons/drive.svg";
@@ -13,18 +11,11 @@ import settings from "../graphics/sidebar icons/settings.svg";
 import team from "../graphics/sidebar icons/team.svg";
 import greenArrow from "../graphics/sidebar icons/greenArrow.svg";
 import whiteArrow from "../graphics/sidebar icons/whiteArrow.svg";
-<<<<<<< HEAD
+
 import logo from "../graphics/logo.svg";
 import Content from "./Content";
 import Header from "../components/Header";
 
-=======
-import arrowDown from "../graphics/header icons/arrowDown.svg";
-import logo from "../graphics/logo.svg";
-import search from "../graphics/header icons/search.svg";
-import notifications from "../graphics/header icons/notifications.svg";
-import profileImg from "../graphics/header icons/profile.svg";
->>>>>>> 96818a759ed67f51259dbd1be4c0539510e44c57
 import "./sidebar.css";
 
 const Ldata = [
@@ -195,11 +186,7 @@ const Sidebar = () => {
         </div>
 
         <div className="lg:pl-72">
-<<<<<<< HEAD
           <div className="flex h-16 shrink-0 items-center gap-x-4  px-4  sm:gap-x-6 sm:px-6 lg:px-8">
-=======
-          <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4  px-4  sm:gap-x-6 sm:px-6 lg:px-8">
->>>>>>> 96818a759ed67f51259dbd1be4c0539510e44c57
             <button
               type="button"
               className="toggle -m-2.5 p-2.5 text-gray-700 lg:hidden"
@@ -209,98 +196,6 @@ const Sidebar = () => {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
             <Header />
-            {/* Separator */}
-<<<<<<< HEAD
-=======
-            <div
-              className="seperator h-6 w-px bg-black lg:hidden"
-              aria-hidden="true"
-            />
-
-            <div className="search flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
-              <form className="relative flex flex-1" action="#">
-                <label htmlFor="search-field" className="sr-only">
-                  Search
-                </label>
-
-                <img
-                  className="search-icon pointer-events-none absolute inset-y-0 left-0 h-full w-4 text-gray-400 ml-3"
-                  aria-hidden="true"
-                  src={search}
-                  alt=""
-                />
-                <input
-                  id="search-field"
-                  className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
-                  placeholder="Search"
-                  type="search"
-                  name="search"
-                />
-              </form>
-              <div className="flex items-center gap-x-4 lg:gap-x-6">
-                <button
-                  type="button"
-                  className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <img src={notifications} alt="" />
-                </button>
-                {/* Separator */}
-
-                <Menu as="div" className="relative">
-                  <Menu.Button className="-m-1.5 flex items-center p-1.5">
-                    <span className="sr-only">Open user menu</span>
-                    <img
-                      className="lg:ml-2 h-8 w-8 rounded-full bg-gray-50"
-                      src={profileImg}
-                      alt=""
-                    />
-                    <span className="hidden lg:flex lg:items-center">
-                      <span
-                        className="userName text-sm font-semibold leading-6 text-gray-900"
-                        aria-hidden="true"
-                      >
-                        Danielle Campbell
-                      </span>
-                      <img
-                        className="ml-6 h-5 w-3 text-gray-400"
-                        aria-hidden="true"
-                        src={arrowDown}
-                        alt=""
-                      />
-                    </span>
-                  </Menu.Button>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
-                      {userNavigation.map((item) => (
-                        <Menu.Item key={item.name}>
-                          {({ active }) => (
-                            <a
-                              href={item.href}
-                              className={classNames(
-                                active ? "bg-gray-50" : "",
-                                "block px-3 py-1 text-sm leading-6 text-gray-900"
-                              )}
-                            >
-                              {item.name}
-                            </a>
-                          )}
-                        </Menu.Item>
-                      ))}
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-              </div>
-            </div>
->>>>>>> 96818a759ed67f51259dbd1be4c0539510e44c57
           </div>
 
           <main className="py-10">

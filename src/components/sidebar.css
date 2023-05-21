@@ -52,3 +52,11 @@ ul {
 .main-div {
   background-color: #20b96f !important;
 }
+
+/* Search Bar */
+
+@media (min-width: 1024px) {
+  .lg\:pl-72 {
+    padding-left: 15rem;
+  }
+}

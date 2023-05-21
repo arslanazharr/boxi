@@ -1,0 +1,81 @@
+.table1 {
+  width: 828px;
+  height: auto;
+  margin-left: 28px;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 24px 18px 24px 18px;
+  margin-top: 18px;
+}
+
+thead {
+  background: #f0f2f4;
+  border-radius: 6px 6px 0px 0px;
+}
+
+thead th {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #8d9198;
+}
+
+td {  
+  background: #f9f9f9;
+  border-radius: 6px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  /* identical to box height, or 200% */
+  text-align: center;
+  color: #1c1c1c;
+}
+
+h2 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #04103b;
+}
+
+@media (min-width: 640px) and (max-width: 1061px) {
+  .table1 {
+    width: 600px;
+  }
+}
+@media (min-width: 0) and (max-width: 639px) {
+  .table1 {
+    width: 300px;
+  }
+}
+
+.viewAllBtn {
+  display: flex;
+  border: 1px solid #f0f2f4;
+  border-radius: 5px;
+  padding: 6px 20px 6px 20px;
+  justify-content: center;
+}
+
+.viewAllBtn button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1f192f;
+}
+
+.viewAllBtn img {
+  margin-left: 5px;
+}
+

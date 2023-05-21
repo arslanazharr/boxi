@@ -1,0 +1,53 @@
+h4 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  margin-left: 28px;
+  color: #1f192f;
+}
+
+.top-data {
+  display: flex;
+  margin-bottom: 23px;
+}
+
+.monthly-div {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1f192f;
+  background: #f0f2f4;
+  border-radius: 5px;
+  width: 82px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-button {
+  display: flex;
+  margin-left: 28px;
+}
+
+.add-button button {
+  width: 149px;
+  height: 38px;
+  border: 1px solid #20b96f;
+  border-radius: 4px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: #20b96f;
+  justify-content: center !important;
+}
+
+.plusIcon {
+  margin-right: 10.6px;
+}

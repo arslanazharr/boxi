@@ -1,0 +1,45 @@
+.activity {
+  display: flex;
+  align-items: start;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.activityDetail {
+  margin-left: 36px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
+
+  /* Black/40% */
+
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.main-activityDiv {
+  margin-left: 28px;
+  background: #ffffff;
+  border-radius: 4px;
+  width: 300px;
+  padding: 28px 17px 28px 17px;
+}
+
+.activity-content {
+  margin-bottom: 23px;
+}
+
+.viewAll {
+  text-align: center;
+  margin-top: 17px;
+}
+
+/* @media (max-width: 1060px) {
+    .main-activityDiv {
+        
+    }
+} */

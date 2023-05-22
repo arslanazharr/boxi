@@ -43,3 +43,15 @@
         
     }
 } */
+
+/* .recentActivityBar {
+  display: flex;
+  justify-content: end;
+} */
+
+.activityDetail-2 {
+  text-decoration: underline;
+}
+.activityDetail-5 {
+  text-decoration: underline;
+}

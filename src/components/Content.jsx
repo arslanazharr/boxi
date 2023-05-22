@@ -1,5 +1,4 @@
 import Cards from "./Cards";
-import Cdata from "./Cdata";
 import "./content.css";
 import arrow from "../graphics/content/arrow.svg";
 import plus from "../graphics/content/plus.svg";
@@ -25,20 +24,7 @@ const Content = () => {
           </button>
         </div>
       </div>
-
-      <div className="cards-main">
-        {Cdata.map((val) => {
-          return (
-            <Cards
-              tit={val.title}
-              icn={val.icon}
-              numb={val.number}
-              arw={val.arrowIcon}
-              prctg={val.percentage}
-            />
-          );
-        })}
-      </div>
+      <Cards />
       <Table1 />
       <Table2 />
       <RecentActivity />

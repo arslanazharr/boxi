@@ -53,7 +53,9 @@ const RecentActivity = () => {
               <img className="icon" src={activity.icon} alt="" />
               <span>{activity.text}</span>
             </div>
-            <span className="activityDetail">{activity.activity}</span>
+            <span className={`activityDetail activityDetail-${index + 1}`}>
+              {activity.activity}
+            </span>
           </div>
         ))}
         <div className="viewAll">

@@ -1,5 +1,5 @@
 .table1 {
-  width: 828px;
+  width: 95%;
   height: auto;
   margin-left: 28px;
   background: #ffffff;
@@ -23,7 +23,7 @@ thead th {
   color: #8d9198;
 }
 
-td {  
+td {
   background: #f9f9f9;
   border-radius: 6px;
   font-family: "Inter";
@@ -54,7 +54,16 @@ h2 {
 }
 @media (min-width: 0) and (max-width: 639px) {
   .table1 {
-    width: 300px;
+    width: 265px !important;
+  }
+  .table {
+    width: 100% !important;
+  }
+  td {
+    font-size: 10px;
+  }
+  thead th {
+    font-size: 10px;
   }
 }
 
@@ -78,4 +87,3 @@ h2 {
 .viewAllBtn img {
   margin-left: 5px;
 }
-

@@ -22,10 +22,9 @@
 }
 
 .main-activityDiv {
-  margin-left: 28px;
   background: #ffffff;
   border-radius: 4px;
-  width: 300px;
+  width: 95%;
   padding: 28px 17px 28px 17px;
 }
 
@@ -38,11 +37,11 @@
   margin-top: 17px;
 }
 
-/* @media (max-width: 1060px) {
-    .main-activityDiv {
-        
-    }
-} */
+@media (max-width: 1060px) {
+  .top-div {
+    display: none;
+  }
+}
 
 /* .recentActivityBar {
   display: flex;
@@ -54,4 +53,18 @@
 }
 .activityDetail-5 {
   text-decoration: underline;
+}
+
+.main-activity-div {
+  margin-top: 25px;
+}
+.main-activity-div h4 {
+  margin-left: 0px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1f192f;
+  margin-bottom: 11px;
 }

@@ -174,7 +174,11 @@ const Sidebar = () => {
                         >
                           <img className="list-icons" src={item.icon} alt="" />
                           {item.name}
-                          <img className="arrow" src={item.arrow} alt="" />
+                          <img
+                            className={`arrow custom-arrow-${index + 1}`}
+                            src={item.arrow}
+                            alt=""
+                          />
                         </a>
                       </li>
                     ))}

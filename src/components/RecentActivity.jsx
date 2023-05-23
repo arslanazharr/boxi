@@ -44,7 +44,7 @@ const activities = [
 
 const RecentActivity = () => {
   return (
-    <div>
+    <div className="top-div">
       <h4>Recent Activity</h4>
       <div className="main-activityDiv">
         {activities.map((activity, index) => (

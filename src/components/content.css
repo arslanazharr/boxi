@@ -6,11 +6,11 @@ h4 {
   line-height: 33px;
   margin-left: 28px;
   color: #1f192f;
+  width: 240px;
 }
 
 .top-data {
   display: flex;
-  margin-bottom: 23px;
 }
 
 .monthly-div {
@@ -22,7 +22,7 @@ h4 {
   color: #1f192f;
   background: #f0f2f4;
   border-radius: 5px;
-  width: 82px;
+  width: 90px;
   height: 28px;
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@ h4 {
 
 .add-button {
   display: flex;
-  margin-left: 28px;
+  margin-left: 126px;
 }
 
 .add-button button {
@@ -50,4 +50,45 @@ h4 {
 
 .plusIcon {
   margin-right: 10.6px;
+}
+
+.content-header {
+  display: flex;
+  margin-bottom: 20px;
+}
+.contentHeader-button {
+  width: 100%;
+  justify-content: end;
+}
+
+@media (max-width: 1060px) {
+  .content-header {
+    flex-direction: column;
+  }
+  .contentHeader-button {
+    justify-content: left;
+  }
+  .top-data {
+    margin-bottom: 10px;
+  }
+  .add-button {
+    margin-left: 28px;
+  }
+}
+@media (max-width: 412px) {
+  .campaignOverview {
+    display: contents;
+  }
+  .monthly-div {
+    margin-left: 28px;
+    margin-top: 10px;
+    width: 75px;
+  }
+}
+
+@media (max-width: 1060px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
 }

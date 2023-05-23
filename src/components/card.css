@@ -74,13 +74,20 @@
 
 .cards {
   margin-right: 16px;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 1060px) {
   .cards-main {
-    flex-direction: column;
+    /* flex-direction: column; */
   }
   .cards {
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
+  }
+}
+
+.flex-wrap-custom {
+  @media (max-width: 1060px) {
+    flex-wrap: wrap;
   }
 }

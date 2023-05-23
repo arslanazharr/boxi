@@ -31,7 +31,7 @@ const Cdata = [
 const Cards = () => {
   return (
     <>
-      <div className="cards-main">
+      <div className="cards-main flex flex-wrap-custom">
         {Cdata.map((props, index) => (
           <>
             <div className="cards" key={index}>

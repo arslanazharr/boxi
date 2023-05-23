@@ -89,6 +89,12 @@ h4 {
 @media (max-width: 1060px) {
   main {
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
   }
+  .mainContent-div {
+    flex-direction: column;
+  }
+}
+.mainContent-div {
+  display: flex;
 }

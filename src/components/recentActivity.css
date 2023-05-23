@@ -39,7 +39,16 @@
 
 @media (max-width: 1060px) {
   .top-div {
-    display: none;
+    margin-left: 28px;
+  }
+  .main-activityDiv {
+    width: 600px;
+  }
+}
+
+@media (min-width: 0) and (max-width: 639px) {
+  .main-activityDiv {
+    width: 265px;
   }
 }
 

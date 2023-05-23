@@ -9,7 +9,7 @@ import RecentActivity from "./RecentActivity";
 const Content = () => {
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div className="mainContent-div">
         <div>
           <div className="content-header">
             <div className="top-data flex flex-col lg:flex-row lg:items-center">

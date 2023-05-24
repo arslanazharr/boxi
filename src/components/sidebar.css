@@ -3,7 +3,7 @@
   width: auto;
 }
 
-li a {
+.link {
   display: flex;
   align-items: center;
   font-family: "Nunito";
@@ -11,8 +11,9 @@ li a {
   font-weight: 700;
   font-size: 15px;
   line-height: 20px;
+  color: #ffffff;
 }
-a {
+.link {
   padding: 10px 35px 10px 35px !important;
 }
 
@@ -27,20 +28,16 @@ ul {
   justify-content: center;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  background: #ffffff;
-  border: 0.56px solid #e2def9;
-  box-shadow: -28px 22px 45px rgba(27, 29, 66, 0.139423);
-  border-radius: 10px;
 }
 
-.custom-class a {
-  padding: 10px 35px 10px 35px;
+.custom-class .link {
+  padding: 10px 30px 10px 30px !important;
 }
 
-.custom-class a .list-icons {
+.custom-class .link .list-icons {
   margin-left: -6px;
 }
-.custom-class a .arrow {
+.custom-class .link .arrow {
   margin-left: 30px;
 }
 
@@ -66,9 +63,10 @@ ul {
   margin-left: 64px;
 }
 
-li a:hover {
-  background-color: white;
-  color: #20b96f;
+li .link:hover {
+  background-color: white !important;
+  color: #20b96f !important;
+  transition: 0.2s ease;
 }
 
 .list-icons {

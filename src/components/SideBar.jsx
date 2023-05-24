@@ -15,22 +15,30 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../graphics/logo.svg";
 import Content from "./Content";
 import Header from "../components/Header";
+import { NavLink } from "react-router-dom";
+import Drive from "./Drive";
+import { Route, Routes } from "react-router-dom";
+import Error from "./Error";
 
 import "./sidebar.css";
 
 const Ldata = [
   {
     name: "Campaigns",
-    href: "#",
     icon: faEarthAmericas,
     arrow: faCaretDown,
-    current: true,
+    path: "/",
   },
-  { name: "Drive", href: "#", icon: faFolderOpen, arrow: faCaretDown },
-  { name: "Boxi Team", href: "#", icon: faPeopleGroup },
-  { name: "Production", href: "#", icon: faStar },
-  { name: "Fix List", href: "#", icon: faFileLines },
-  { name: "Settings", href: "#", icon: faGear },
+  {
+    name: "Drive",
+    icon: faFolderOpen,
+    arrow: faCaretDown,
+    path: "/drive",
+  },
+  { name: "Boxi Team", icon: faPeopleGroup, path: "boxiteam" },
+  { name: "Production", icon: faStar, path: "/production" },
+  { name: "Fix List", icon: faFileLines, path: "/fixlist" },
+  { name: "Settings", icon: faGear, path: "/settings" },
 ];
 
 function classNames(...classes) {
@@ -39,6 +47,13 @@ function classNames(...classes) {
 
 const Sidebar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const navStyle = ({ isActive }) => {
+    return {
+      backgroundColor: isActive ? "white" : "#20b96f",
+      color: isActive ? "#20b96f" : "white",
+    };
+  };
 
   return (
     <>
@@ -113,14 +128,10 @@ const Sidebar = () => {
                                 key={item.name}
                                 className={index < 1 ? "custom-class" : ""}
                               >
-                                <a
-                                  href={item.href}
-                                  className={classNames(
-                                    item.current
-                                      ? "bg-white text-green-600"
-                                      : "text-white",
-                                    "group flex gap-x-4 rounded-md p-2 text-sm leading-6 font-semibold"
-                                  )}
+                                <NavLink
+                                  className="group flex gap-x-4 rounded-md p-2 text-sm leading-6 font-semibold link"
+                                  to={item.path}
+                                  style={navStyle}
                                 >
                                   <FontAwesomeIcon
                                     icon={item.icon}
@@ -133,7 +144,7 @@ const Sidebar = () => {
                                       index + 1
                                     }`}
                                   />
-                                </a>
+                                </NavLink>
                               </li>
                             ))}
                           </ul>
@@ -163,14 +174,11 @@ const Sidebar = () => {
                         key={item.name}
                         className={index < 1 ? "custom-class" : ""}
                       >
-                        <a
-                          href={item.href}
-                          className={classNames(
-                            item.current
-                              ? "bg-white text-green-600"
-                              : "text-white",
-                            "group flex gap-x-4 rounded-md p-2 text-sm leading-6 font-semibold"
-                          )}
+                        <NavLink
+                          className="
+                        group flex gap-x-4 rounded-md p-2 text-sm leading-6 font-semibold link"
+                          to={item.path}
+                          style={navStyle}
                         >
                           <FontAwesomeIcon
                             icon={item.icon}
@@ -181,7 +189,7 @@ const Sidebar = () => {
                             icon={item.arrow}
                             className={`arrow custom-arrow-${index + 1}`}
                           />
-                        </a>
+                        </NavLink>
                       </li>
                     ))}
                   </ul>
@@ -205,7 +213,13 @@ const Sidebar = () => {
           </div>
 
           <main className="py-10">
-            <Content />
+            <Routes>
+              <Route path="/" element={<Content />}>
+                <Route exact path="/boxi" element={<Content />} />
+              </Route>
+              <Route exact path="/drive" element={<Drive />} />
+              <Route exact path="*" element={<Error />} />
+            </Routes>
           </main>
         </div>
       </div>

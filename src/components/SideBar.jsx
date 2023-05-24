@@ -1,17 +1,17 @@
 import { Fragment, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPeopleGroup,
+  faGear,
+  faFileLines,
+  faStar,
+  faFolderOpen,
+  faCaretDown,
+  faEarthAmericas,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { Dialog, Transition } from "@headlessui/react";
-
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import campaigns from "../graphics/sidebar icons/campaigns.svg";
-import drive from "../graphics/sidebar icons/drive.svg";
-import list from "../graphics/sidebar icons/list.svg";
-import production from "../graphics/sidebar icons/production.svg";
-import settings from "../graphics/sidebar icons/settings.svg";
-import team from "../graphics/sidebar icons/team.svg";
-import greenArrow from "../graphics/sidebar icons/greenArrow.svg";
-import whiteArrow from "../graphics/sidebar icons/whiteArrow.svg";
-
 import logo from "../graphics/logo.svg";
 import Content from "./Content";
 import Header from "../components/Header";
@@ -22,15 +22,15 @@ const Ldata = [
   {
     name: "Campaigns",
     href: "#",
-    icon: campaigns,
-    arrow: greenArrow,
+    icon: faEarthAmericas,
+    arrow: faCaretDown,
     current: true,
   },
-  { name: "Drive", href: "#", icon: drive, arrow: whiteArrow },
-  { name: "Boxi Team", href: "#", icon: team },
-  { name: "Production", href: "#", icon: production },
-  { name: "Fix List", href: "#", icon: list },
-  { name: "Settings", href: "#", icon: settings },
+  { name: "Drive", href: "#", icon: faFolderOpen, arrow: faCaretDown },
+  { name: "Boxi Team", href: "#", icon: faPeopleGroup },
+  { name: "Production", href: "#", icon: faStar },
+  { name: "Fix List", href: "#", icon: faFileLines },
+  { name: "Settings", href: "#", icon: faGear },
 ];
 
 function classNames(...classes) {
@@ -122,16 +122,16 @@ const Sidebar = () => {
                                     "group flex gap-x-4 rounded-md p-2 text-sm leading-6 font-semibold"
                                   )}
                                 >
-                                  <img
+                                  <FontAwesomeIcon
+                                    icon={item.icon}
                                     className="list-icons"
-                                    src={item.icon}
-                                    alt=""
                                   />
                                   {item.name}
-                                  <img
-                                    className="arrow"
-                                    src={item.arrow}
-                                    alt=""
+                                  <FontAwesomeIcon
+                                    icon={item.arrow}
+                                    className={`arrow custom-arrow-${
+                                      index + 1
+                                    }`}
                                   />
                                 </a>
                               </li>
@@ -172,12 +172,14 @@ const Sidebar = () => {
                             "group flex gap-x-4 rounded-md p-2 text-sm leading-6 font-semibold"
                           )}
                         >
-                          <img className="list-icons" src={item.icon} alt="" />
+                          <FontAwesomeIcon
+                            icon={item.icon}
+                            className="list-icons"
+                          />
                           {item.name}
-                          <img
+                          <FontAwesomeIcon
+                            icon={item.arrow}
                             className={`arrow custom-arrow-${index + 1}`}
-                            src={item.arrow}
-                            alt=""
                           />
                         </a>
                       </li>

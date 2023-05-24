@@ -2,6 +2,7 @@ import React from "react";
 import "./table.css";
 import arrow from "../graphics/content/arrow2.svg";
 import dots from "../graphics/content/dots.svg";
+import TableCard2 from "./TableCard2";
 
 const campaigns = [
   {
@@ -74,6 +75,7 @@ const Table2 = () => {
           </tbody>
         </table>
       </div>
+      <TableCard2 />
     </>
   );
 };

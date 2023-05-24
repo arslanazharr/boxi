@@ -48,7 +48,7 @@
 
 @media (min-width: 0) and (max-width: 639px) {
   .main-activityDiv {
-    width: 265px;
+    width: 256px;
   }
 }
 
@@ -76,4 +76,16 @@
   line-height: 22px;
   color: #1f192f;
   margin-bottom: 11px;
+}
+
+@media (max-width: 639px) {
+  .main-activity-div {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 639px) {
+  .top-div {
+    margin-left: 28px;
+  }
 }

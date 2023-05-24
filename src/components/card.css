@@ -81,3 +81,9 @@
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 639px) {
+  .cards-main {
+    justify-content: center;
+  }
+}

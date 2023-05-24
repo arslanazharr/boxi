@@ -12,13 +12,14 @@ li a {
   font-size: 15px;
   line-height: 20px;
 }
-
-li {
-  margin-left: 20px;
-  margin-right: 20px;
+a {
+  padding: 10px 35px 10px 35px !important;
 }
+
 ul {
   margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .custom-class {
@@ -62,5 +63,14 @@ ul {
 }
 
 .custom-arrow-2 {
-  margin-left: 69px;
+  margin-left: 64px;
+}
+
+li a:hover {
+  background-color: white;
+  color: #20b96f;
+}
+
+.list-icons {
+  margin-left: -6px;
 }

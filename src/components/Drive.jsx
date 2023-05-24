@@ -22,7 +22,7 @@ const Drive = () => {
         >
           <button className="flex items-center">
             <img className="plusIcon" src={plus} alt="" />
-            New Campaign
+            New Vendor
           </button>
         </div>
       </div>

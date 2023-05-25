@@ -4,7 +4,6 @@ import decrease from "../graphics/card icons/decrease.svg";
 import "./card.css";
 import speaker from "../graphics/card icons/speaker.svg";
 
-
 const Cdata = [
   {
     title: "Trucks on Campaign",

@@ -48,9 +48,10 @@ h2 {
   color: #04103b;
 }
 
-@media (min-width: 640px) and (max-width: 1061px) {
+@media (min-width: 640px) and (max-width: 1060px) {
   .table1 {
-    width: 600px;
+    width: 95%;
+    margin-right: 28px;
   }
 }
 @media (min-width: 0) and (max-width: 639px) {

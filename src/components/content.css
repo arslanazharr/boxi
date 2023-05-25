@@ -31,7 +31,8 @@ h4 {
 
 .add-button {
   display: flex;
-  margin-left: 126px;
+  width: 100%;
+  margin-right: 16px;
 }
 
 .add-button button {

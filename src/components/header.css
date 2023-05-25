@@ -1,50 +1,72 @@
 input {
-    background: #f0f2f4;
-    border-radius: 4px;
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-  
+  background: #f0f2f4;
+  border-radius: 4px;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media (min-width: 1024px) {
+  input {
+    width: 455px !important;
+    margin-left: -4px;
   }
-  
-  @media (min-width: 1024px) {
-    input {
-      width: 455px !important;
-      margin-left: -4px;
-    }
-  }
-  
-  input::placeholder {
-    padding-left: 24px;
-  }
-  
-  .search {
-    margin-top: 26px;
-  }
-  
-  .search-icon {
-    margin-left: 22px !important;
-  }
-  
-  .toggle {
-    margin-top: 17px;
-  }
-  
-  .seperator {
-    margin-top: 26px;
-  }
-  
-  .userName {
-    margin-left: 10px;
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 18px;
-    color: #6b6b6b;
-  }
-  
+}
+
+input::placeholder {
+  padding-left: 24px;
+}
+
+.search {
+  margin-top: 26px;
+}
+
+.search-icon {
+  margin-left: 22px !important;
+}
+
+.toggle {
+  margin-top: 17px;
+}
+
+.seperator {
+  margin-top: 26px;
+}
+
+.userName {
+  margin-left: 10px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #6b6b6b;
+}
+
+.driveTableSearch {
+  background: #ffffff;
+  border: 0.5px solid #d7d7d7;
+  border-radius: 4px;
+  width: 243px !important;
+  height: 42px !important;
+}
+
+.pmtSchedule {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+
+  color: #20b96f;
+}
+
+.pmtSchedule img {
+  margin-right: 8px;
+}

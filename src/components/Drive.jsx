@@ -2,6 +2,8 @@ import React from "react";
 import arrow from "../graphics/content/arrow.svg";
 import plus from "../graphics/content/plus.svg";
 import "./content.css";
+import DriveCards from "./DriveCards";
+import DriveTable from "./DriveTable";
 
 const Drive = () => {
   return (
@@ -17,8 +19,8 @@ const Drive = () => {
           </div>
         </div>
         <div
-          className="add-button contentHeader-button"
-          style={{ maxWidth: "838px", display: "flex-end" }}
+          className="add-button contentHeader-button "
+          style={{ marginRight: "32px" }}
         >
           <button className="flex items-center">
             <img className="plusIcon" src={plus} alt="" />
@@ -26,6 +28,8 @@ const Drive = () => {
           </button>
         </div>
       </div>
+      <DriveCards />
+      <DriveTable />
     </>
   );
 };

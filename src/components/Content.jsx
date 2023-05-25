@@ -23,7 +23,7 @@ const Content = () => {
             </div>
             <div
               className="add-button contentHeader-button"
-              style={{ maxWidth: "346px", display: "flex-end" }}
+            
             >
               <button className="flex items-center">
                 <img className="plusIcon" src={plus} alt="" />

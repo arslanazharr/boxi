@@ -1,0 +1,18 @@
+.error404 {
+  color: #20b96f !important;
+  font-size: larger;
+}
+
+.backButton {
+  background-color: #20b96f !important;
+}
+
+.backButton:hover {
+  background-color: #0d6a3d !important;
+}
+
+.errorMain {
+  background-color: rgb(184, 204, 193);
+  margin-left: 50px;
+  margin-right: 50px;
+}

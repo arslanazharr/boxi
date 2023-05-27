@@ -21,25 +21,26 @@ ul {
   margin-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
+  align-items: center;
 }
 
 .custom-class {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-.custom-class .link {
+/* .custom-class .link {
   padding: 10px 30px 10px 30px !important;
-}
+} */
 
-.custom-class .link .list-icons {
+/* .custom-class .link .list-icons {
   margin-left: -6px;
-}
-.custom-class .link .arrow {
+} */
+/* .custom-class .link .arrow {
   margin-left: 30px;
-}
+} */
 
 .logo {
   margin-left: 20px;
@@ -70,5 +71,15 @@ li .link:hover {
 }
 
 .list-icons {
-  margin-left: -6px;
+  /* margin-left: -6px; */
+}
+
+.max-w-sm {
+  max-width: 13rem;
+}
+
+.allContent {
+  @media (min-width: 1024px) {
+    padding-left: 12rem !important;
+  }
 }

@@ -1,6 +1,12 @@
 .skeleton {
-  margin-top: 150px;
+  margin-top: 140px;
   font-size: 35px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+}
+
+.emoji {
+  margin-left: 10px;
 }

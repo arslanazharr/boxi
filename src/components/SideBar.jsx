@@ -18,7 +18,7 @@ import Header from "../components/Header";
 import { NavLink } from "react-router-dom";
 import Drive from "./Drive";
 import { Route, Routes } from "react-router-dom";
-import Error from "./Error";
+import Error from "./ErrorPage";
 
 import "./sidebar.css";
 
@@ -86,7 +86,7 @@ const Sidebar = () => {
                 leaveFrom="translate-x-0"
                 leaveTo="-translate-x-full"
               >
-                <Dialog.Panel className="relative mr-16 flex w-full max-w-xs flex-1">
+                <Dialog.Panel className="relative mr-16 flex w-full max-w-sm flex-1">
                   <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-300"
@@ -138,12 +138,12 @@ const Sidebar = () => {
                                     className="list-icons"
                                   />
                                   {item.name}
-                                  <FontAwesomeIcon
+                                  {/* <FontAwesomeIcon
                                     icon={item.arrow}
                                     className={`arrow custom-arrow-${
                                       index + 1
                                     }`}
-                                  />
+                                  /> */}
                                 </NavLink>
                               </li>
                             ))}
@@ -160,8 +160,8 @@ const Sidebar = () => {
 
         {/* Static sidebar for desktop */}
 
-        <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-60 lg:flex-col ">
-          <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-green-600 main-div">
+        <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-auto lg:flex-col">
+          <div className="flex grow flex-col overflow-y-auto bg-green-600 main-div">
             <div className="flex h-16 shrink-0 items-center">
               <img className="h-8 w-auto logo" src={logo} alt="Your Company" />
             </div>
@@ -185,10 +185,10 @@ const Sidebar = () => {
                             className="list-icons"
                           />
                           {item.name}
-                          <FontAwesomeIcon
+                          {/* <FontAwesomeIcon
                             icon={item.arrow}
                             className={`arrow custom-arrow-${index + 1}`}
-                          />
+                          /> */}
                         </NavLink>
                       </li>
                     ))}
@@ -199,7 +199,7 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div className="lg:pl-72">
+        <div className="lg:pl-72 allContent">
           <div className="flex h-16 shrink-0 items-center gap-x-4  px-4  sm:gap-x-6 sm:px-6 lg:px-8">
             <button
               type="button"

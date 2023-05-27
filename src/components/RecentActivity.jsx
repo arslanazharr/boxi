@@ -1,68 +1,47 @@
-import speaker from "../graphics/recentActivity/speaker.svg";
+import { useSelector } from "react-redux";
 import "./recentActivity.css";
-
-const activities = [
-  {
-    icon: speaker,
-    text: 'New Campaign added "Boxi Campaign 105"',
-    activity: "5m ago",
-    underline: false,
-  },
-  {
-    icon: speaker,
-    text: 'Payment scheduled for "Campaign 1024"',
-    activity: "View Details",
-    underline: true,
-  },
-  {
-    icon: speaker,
-    text: "12 New Trucks Added to Inventory",
-    activity: "1:32 AM",
-  },
-  {
-    icon: speaker,
-    text: 'Truck Added to Campaign "Boxi Campaign 102"',
-    activity: "1:32 AM",
-  },
-  {
-    icon: speaker,
-    text: 'Payment scheduled for "Campaign 1024"',
-    activity: "View Details",
-    underline: true,
-  },
-  {
-    icon: speaker,
-    text: "Sarah Johnson modified Campaign Boxi 1054",
-    activity: "Last Thursday 3:34 AM",
-  },
-  {
-    icon: speaker,
-    text: "Sarah deleted Campaign 101",
-    activity: "Last Thursday 3:34 AM",
-  },
-];
+import { useDispatch } from "react-redux";
+import { setLoading } from "../redux/actions/tableActions";
+import { useEffect } from "react";
+import ActivitySkeleton from "./skeletons/ActivitySkeleton";
 
 const RecentActivity = () => {
+  const activities = useSelector((state) => state.allData.activities);
+  const loading = useSelector((state) => state.allData.loading);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(setLoading(false));
+    }, 1500);
+  }, []);
   return (
-    <div className="top-div">
-      <h4>Recent Activity</h4>
-      <div className="main-activityDiv">
-        {activities.map((activity, index) => (
-          <div key={index} className="activity-content">
-            <div className="activity">
-              <img className="icon" src={activity.icon} alt="" />
-              <span>{activity.text}</span>
+    <>
+      {loading ? (
+        <ActivitySkeleton />
+      ) : (
+        <div className="top-div">
+          <h4>Recent Activity</h4>
+          <div className="main-activityDiv">
+            {activities.map((activity, index) => (
+              <div key={index} className="activity-content">
+                <div className="activity">
+                  <img className="icon" src={activity.icon} alt="" />
+                  <span>{activity.text}</span>
+                </div>
+                <span className={`activityDetail activityDetail-${index + 1}`}>
+                  {activity.activity}
+                </span>
+              </div>
+            ))}
+            <div className="viewAll">
+              <span>View All</span>
             </div>
-            <span className={`activityDetail activityDetail-${index + 1}`}>
-              {activity.activity}
-            </span>
           </div>
-        ))}
-        <div className="viewAll">
-          <span>View All</span>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

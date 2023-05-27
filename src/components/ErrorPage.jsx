@@ -1,4 +1,4 @@
-import ErrorSkeleton from "./ErrorSkeleton";
+import ErrorSkeleton from "./skeletons/ErrorSkeleton";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./errorPage.css";

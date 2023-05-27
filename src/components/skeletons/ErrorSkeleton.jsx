@@ -1,5 +1,5 @@
 import React from "react";
-import "./errorSkeleton.css";
+import "././errorSkeleton.css";
 
 const ErrorSkeleton = () => {
   return (

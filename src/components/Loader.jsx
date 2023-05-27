@@ -6,7 +6,7 @@ const Loader = () => {
   return (
     <>
       <div className="loaderDiv">
-        <div class="custom-loader"></div>;
+        <div class="custom-loader"></div>
       </div>
     </>
   );

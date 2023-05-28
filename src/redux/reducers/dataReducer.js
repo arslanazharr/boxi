@@ -3,6 +3,7 @@ import speakerCircled from "../../graphics/recentActivity/speaker.svg";
 import speaker from "../../graphics/card icons/speaker.svg";
 import truck from "../../graphics/card icons/truck.svg";
 import increase from "../../graphics/card icons/increase.svg";
+import plusIcon from "../../graphics/content/plus.svg";
 import decrease from "../../graphics/card icons/decrease.svg";
 
 const initialState = {
@@ -122,12 +123,90 @@ const initialState = {
       percentage: "+02%",
     },
   ],
+  driveTableCard: [
+    {
+      title: "SHANICK TRANSPORT LLC",
+      TruckName: "Marvin #1",
+      Campaign: "N/A",
+      StartDate: "10/01/2022",
+      icon: plusIcon,
+      PaymentSchedule: "Payment Schedule",
+    },
+    {
+      title: "MARIO GUILLEN",
+      TruckName: "Mario 24' White Cab",
+      Campaign: "N/A",
+      StartDate: "10/01/2022",
+      icon: plusIcon,
+      PaymentSchedule: "Payment Schedule",
+    },
+    {
+      title: "MARIO GUILLEN",
+      TruckName: "Hansen #4",
+      Campaign: "N/A",
+      StartDate: "10/01/2022",
+      icon: plusIcon,
+      PaymentSchedule: "Payment Schedule",
+    },
+    {
+      title: "MV TRADING CORP",
+      TruckName: "Mario 24'",
+      Campaign: "N/A",
+      StartDate: "10/01/2022",
+      icon: plusIcon,
+      PaymentSchedule: "Payment Schedule",
+    },
+    {
+      title: "MARIO GUILLEN",
+      TruckName: "Mario 24' Gray Cab",
+      Campaign: "N/A",
+      StartDate: "10/01/2022",
+      icon: plusIcon,
+      PaymentSchedule: "Payment Schedule",
+    },
+    {
+      title: "DOUGLAS ARGUMEDO",
+      TruckName: "Amilcar",
+      Campaign: "N/A",
+      StartDate: "10/01/2022",
+      icon: plusIcon,
+      PaymentSchedule: "Payment Schedule",
+    },
+    {
+      title: "RUBEN CALI SERVICES",
+      TruckName: "Ruben 24'",
+      Campaign: "N/A",
+      StartDate: "10/01/2022",
+      icon: plusIcon,
+      PaymentSchedule: "Payment Schedule",
+    },
+    {
+      title: "SHANICK TRANSPORT LLC",
+      TruckName: "Mario 24' White Cab",
+      Campaign: "N/A",
+      StartDate: "10/01/2022",
+      icon: plusIcon,
+      PaymentSchedule: "Payment Schedule",
+    },
+    {
+      title: "SHANICK TRANSPORT LLC",
+      TruckName: "Mario 24' White Cab",
+      Campaign: "N/A",
+      StartDate: "10/01/2022",
+      icon: plusIcon,
+      PaymentSchedule: "Payment Schedule",
+    },
+  ],
+  driveTable: [],
+  driveCard: [],
 };
 
 export const dataReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SHOW_TABLES:
-      return state;
+      return { ...state, driveTable: payload, driveCard: payload };
+    case ActionTypes.SHOW_DRIVE_CARDS:
+      return { ...state, driveCard: payload };
     case ActionTypes.SET_LOADING:
       return {
         ...state,

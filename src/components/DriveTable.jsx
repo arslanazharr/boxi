@@ -1,93 +1,29 @@
-import plusIcon from "../graphics/content/plus.svg";
 import "./header.css";
 import "./table.css";
 import search from "../graphics/header icons/search.svg";
 import DriveTable1 from "./DriveTable1";
-const DTD = [
-  {
-    id: 1,
-    Vendor: "SHANICK TRANSPORT LLC",
-    TruckName: "Marvin #1",
-    Campaign: "N/A",
-    StartDate: "10/01/2022",
-    icon: plusIcon,
-    PaymentSchedule: "Payment Schedule",
-  },
-  {
-    id: 2,
-    Vendor: "MARIO GUILLEN",
-    TruckName: "Mario 24' White Cab",
-    Campaign: "N/A",
-    StartDate: "10/01/2022",
-    icon: plusIcon,
-    PaymentSchedule: "Payment Schedule",
-  },
-  {
-    id: 3,
-    Vendor: "MARIO GUILLEN",
-    TruckName: "Hansen #4",
-    Campaign: "N/A",
-    StartDate: "10/01/2022",
-    icon: plusIcon,
-    PaymentSchedule: "Payment Schedule",
-  },
-  {
-    id: 4,
-    Vendor: "MV TRADING CORP",
-    TruckName: "Mario 24'",
-    Campaign: "N/A",
-    StartDate: "10/01/2022",
-    icon: plusIcon,
-    PaymentSchedule: "Payment Schedule",
-  },
-  {
-    id: 5,
-    Vendor: "MARIO GUILLEN",
-    TruckName: "Mario 24' Gray Cab",
-    Campaign: "N/A",
-    StartDate: "10/01/2022",
-    icon: plusIcon,
-    PaymentSchedule: "Payment Schedule",
-  },
-  {
-    id: 6,
-    Vendor: "DOUGLAS ARGUMEDO",
-    TruckName: "Amilcar",
-    Campaign: "N/A",
-    StartDate: "10/01/2022",
-    icon: plusIcon,
-    PaymentSchedule: "Payment Schedule",
-  },
-  {
-    id: 7,
-    Vendor: "RUBEN CALI SERVICES",
-    TruckName: "Ruben 24'",
-    Campaign: "N/A",
-    StartDate: "10/01/2022",
-    icon: plusIcon,
-    PaymentSchedule: "Payment Schedule",
-  },
-  {
-    id: 8,
-    Vendor: "SHANICK TRANSPORT LLC",
-    TruckName: "Mario 24' White Cab",
-    Campaign: "N/A",
-    StartDate: "10/01/2022",
-    icon: plusIcon,
-    PaymentSchedule: "Payment Schedule",
-  },
-  {
-    id: 9,
-    Vendor: "SHANICK TRANSPORT LLC",
-    TruckName: "Mario 24' White Cab",
-    Campaign: "N/A",
-    StartDate: "10/01/2022",
-    icon: plusIcon,
-    PaymentSchedule: "Payment Schedule",
-  },
-];
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { showTables } from "../redux/actions/tableActions";
 
 const DriveTable = () => {
+  const DriveTable = useSelector((state) => state.allData.driveTable);
+  const dispatch = useDispatch();
+
+  const fetchDriveTable = async () => {
+    const response = await axios
+      .get("https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable")
+      .catch((err) => {
+        console.log(err);
+      });
+    dispatch(showTables(response.data));
+  };
+
+  useEffect(() => {
+    fetchDriveTable();
+  }, []);
   return (
     <>
       <div className="table1">
@@ -127,7 +63,7 @@ const DriveTable = () => {
             </tr>
           </thead>
           <tbody>
-            {DTD.map((props) => (
+            {DriveTable.map((props) => (
               <tr key={props.id} className="border-b">
                 <td className="py-2 pl-2 pr-4 sm:table-cell">{props.id}</td>
                 <td className="py-2 pl-2 pr-4">{props.Vendor}</td>

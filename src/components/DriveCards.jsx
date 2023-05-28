@@ -1,46 +1,46 @@
-import truck from "../graphics/card icons/truck.svg";
-import increase from "../graphics/card icons/increase.svg";
-import decrease from "../graphics/card icons/decrease.svg";
-import caseIcon from "../graphics/driveIcons/case.svg";
 import "./card.css";
-
-const DCdata = [
-  {
-    title: "Trucks on Campaign",
-    icon: truck,
-    number: 1,
-    arrowIcon: increase,
-    percentage: "+15%",
-  },
-  {
-    title: "Truck Inventory",
-    icon: caseIcon,
-    number: 345,
-    arrowIcon: decrease,
-    percentage: "-3.5%",
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { showDriveCards } from "../redux/actions/tableActions";
+import { useEffect } from "react";
 
 const DriveCards = () => {
+  const DriveCard = useSelector((state) => state.allData.driveCard);
+  const dispatch = useDispatch();
+
+  const fetchDriveCard = async () => {
+    const response = await axios
+      .get("https://6471f1e36a9370d5a41adaa8.mockapi.io/drivecard")
+      .catch((err) => {
+        console.log("Error: ", err);
+      });
+    dispatch(showDriveCards(response.data));
+    console.log(response.data);
+  };
+
+  useEffect(() => {
+    fetchDriveCard();
+  });
+
   return (
     <>
       <div className="cards-main flex flex-wrap-custom">
-        {DCdata.map((props, index) => (
+        {DriveCard.map((data, id) => (
           <>
-            <div className="cards" key={index}>
+            <div className="cards" key={id}>
               <div className="card">
                 <div className="header">
-                  <h2 className="title">{props.title}</h2>
-                  <img className="icon" src={props.icon} />
+                  <h2 className="title">{data.title}</h2>
+                  <img className="icon" src={data.icon} />
                 </div>
                 <div className="content">
                   <div className="bottom-left">
-                    <span className="number">{props.number}</span>
+                    <span className="number">{data.number}</span>
                   </div>
                   <div className="bottom-right">
-                    <img className="arrowIcon" src={props.arrowIcon} />
-                    <span className={`percentage card-${index + 1}`}>
-                      {props.percentage}
+                    <img className="arrowIcon" src={data.arrowIcon} />
+                    <span className={`percentage card-${id + 1}`}>
+                      {data.percentage}
                     </span>
                   </div>
                 </div>

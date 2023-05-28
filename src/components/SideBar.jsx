@@ -113,11 +113,13 @@ const Sidebar = () => {
                   {/* Sidebar component, swap this element with another sidebar if you like */}
                   <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-green-600 main-div">
                     <div className="flex h-16 shrink-0 items-center">
-                      <img
-                        className="h-8 w-auto logo"
-                        src={logo}
-                        alt="Your Company"
-                      />
+                      <NavLink to="/">
+                        <img
+                          className="h-8 w-auto logo"
+                          src={logo}
+                          alt="Your Company"
+                        />
+                      </NavLink>
                     </div>
                     <nav className="flex flex-1 flex-col">
                       <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -163,7 +165,14 @@ const Sidebar = () => {
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-auto lg:flex-col">
           <div className="flex grow flex-col overflow-y-auto bg-green-600 main-div">
             <div className="flex h-16 shrink-0 items-center">
-              <img className="h-8 w-auto logo" src={logo} alt="Your Company" />
+              <NavLink to="/">
+                {" "}
+                <img
+                  className="h-8 w-auto logo"
+                  src={logo}
+                  alt="Your Company"
+                />{" "}
+              </NavLink>
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">

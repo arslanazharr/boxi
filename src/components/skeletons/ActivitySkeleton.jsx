@@ -8,40 +8,40 @@ const ActivitySkeleton = () => {
         <div className="activity-content">
           <div className="activity">
             <img
-              className="icon mb-4 h-10 w-10 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"
+              className="icon mb-4 h-6 w-6 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"
               alt=""
             />
-            <span className=""></span>
+            <span className="mb-4 h-5 w-24 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"></span>
           </div>
           <span className=""></span>
         </div>
         <div className="activity-content">
           <div className="activity">
             <img
-              className="icon mb-4 h-10 w-10 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"
+              className="icon mb-4 h-6 w-6 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"
               alt=""
             />
-            <span className=""></span>
+            <span className="mb-4 h-5 w-24 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"></span>
           </div>
           <span className=""></span>
         </div>
         <div className="activity-content">
           <div className="activity">
             <img
-              className="icon mb-4 h-10 w-10 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"
+              className="icon mb-4 h-6 w-6 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"
               alt=""
             />
-            <span className=""></span>
+            <span className="mb-4 h-5 w-24 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"></span>
           </div>
           <span className=""></span>
         </div>
         <div className="activity-content">
           <div className="activity">
             <img
-              className="icon mb-4 h-10 w-10 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"
+              className="icon mb-4 h-6 w-6 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"
               alt=""
             />
-            <span className=""></span>
+            <span className="mb-4 h-5 w-24 animate-pulse rounded-full bg-gray-200 dark:bg-gray-400"></span>
           </div>
           <span className=""></span>
         </div>

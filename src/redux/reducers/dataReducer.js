@@ -197,6 +197,52 @@ const initialState = {
       PaymentSchedule: "Payment Schedule",
     },
   ],
+  TableCard1: [
+    {
+      title: "Campaign 1024",
+      ActiveTrucks: 23,
+      InactiveTrucks: 4,
+      PlaceholderTrucks: 2,
+      DaysRemaining: 2,
+      DaysElapsed: 2,
+    },
+    {
+      title: "Campaign 1145",
+      ActiveTrucks: 11,
+      InactiveTrucks: 12,
+      PlaceholderTrucks: 11,
+      DaysRemaining: 11,
+      DaysElapsed: 11,
+    },
+    {
+      title: "Campaign 5507",
+      ActiveTrucks: 10,
+      InactiveTrucks: 25,
+      PlaceholderTrucks: 7,
+      DaysRemaining: 7,
+      DaysElapsed: 7,
+    },
+  ],
+  TableCard2: [
+    {
+      title: "Campaign 1024",
+      Trucks: 23,
+      StartDate: "10/01/2023",
+      EndDate: "10/01/2023",
+    },
+    {
+      title: "Campaign 1145",
+      Trucks: 11,
+      StartDate: "10/01/2023",
+      EndDate: "10/01/2023",
+    },
+    {
+      title: "Campaign 5507",
+      Trucks: 10,
+      StartDate: "10/01/2023",
+      EndDate: "10/01/2023",
+    },
+  ],
   driveTable: [],
   driveCard: [],
 };

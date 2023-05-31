@@ -250,7 +250,7 @@ const initialState = {
 export const dataReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SHOW_TABLES:
-      return { ...state, driveTable: payload, driveCard: payload };
+      return { ...state, driveTable: payload };
     case ActionTypes.SHOW_DRIVE_CARDS:
       return { ...state, driveCard: payload };
     case ActionTypes.SET_LOADING:

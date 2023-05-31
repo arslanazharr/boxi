@@ -13,17 +13,21 @@ const DriveTable = () => {
   const dispatch = useDispatch();
 
   const fetchDriveTable = async () => {
-    const response = await axios
-      .get("https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable")
-      .catch((err) => {
-        console.log(err);
-      });
-    dispatch(showTables(response.data));
+    try {
+      const response = await axios.get(
+        "https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable"
+      );
+
+      dispatch(showTables(response.data));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     fetchDriveTable();
   }, []);
+  
   return (
     <>
       <div className="table1">

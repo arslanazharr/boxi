@@ -1,33 +1,15 @@
 import "./card.css";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import { showDriveCards } from "../redux/actions/tableActions";
 import { useEffect } from "react";
+import { fetchDriveCard } from "../redux/actions/tableActions";
 
 const DriveCards = () => {
   const DriveCard = useSelector((state) => state.allData.driveCard);
   const dispatch = useDispatch();
 
-  const fetchDriveCard = async () => {
-    try {
-      const response = await axios.get(
-        "https://6471f1e36a9370d5a41adaa8.mockapi.io/drivecard"
-      );
-
-      dispatch(showDriveCards(response.data));
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    fetchDriveCard();
+    dispatch(fetchDriveCard());
   }, []);
-
-  useEffect(() => {
-    console.log(DriveCard);
-  }, [DriveCard]);
 
   return (
     <>

@@ -5,29 +5,16 @@ import DriveTable1 from "./DriveTable1";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import axios from "axios";
-import { showTables } from "../redux/actions/tableActions";
+import { fetchDriveTable } from "../redux/actions/tableActions";
 
 const DriveTable = () => {
   const DriveTable = useSelector((state) => state.allData.driveTable);
   const dispatch = useDispatch();
 
-  const fetchDriveTable = async () => {
-    try {
-      const response = await axios.get(
-        "https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable"
-      );
-
-      dispatch(showTables(response.data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    fetchDriveTable();
+    dispatch(fetchDriveTable());
   }, []);
-  
+
   return (
     <>
       <div className="table1">

@@ -3,9 +3,10 @@ import "./table.css";
 import search from "../graphics/header icons/search.svg";
 import DriveTable1 from "./DriveTable1";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchDriveTable } from "../redux/actions/tableActions";
+import ReactPaginate from "react-paginate";
 
 const DriveTable = () => {
   const DriveTable = useSelector((state) => state.allData.driveTable);
@@ -14,6 +15,35 @@ const DriveTable = () => {
   useEffect(() => {
     dispatch(fetchDriveTable());
   }, []);
+
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const dataPerPage = 10;
+  const pageVisited = pageNumber * dataPerPage;
+
+  const displayData = DriveTable.slice(
+    pageVisited,
+    pageVisited + dataPerPage
+  ).map((data) => {
+    return (
+      <tr key={data.id} className="border-b">
+        <td className="py-2 pl-2 pr-4 sm:table-cell">{data.id}</td>
+        <td className="py-2 pl-2 pr-4">{data.Vendor}</td>
+        <td className="py-2 pl-2 pr-4">{data.TruckName}</td>
+        <td className="py-2 pl-2 pr-4">{data.Campaign}</td>
+        <td className="py-2 pl-2 pr-4 sm:table-cell">{data.StartDate}</td>
+        <td className="py-2 pl-2 pr-4 sm:table-cell pmtSchedule">
+          {/* <img src={data.icon} alt="" /> */}
+          {data.PaymentSchedule}
+        </td>
+      </tr>
+    );
+  });
+
+  const pageCount = Math.ceil(DriveTable.length / dataPerPage);
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   return (
     <>
@@ -53,24 +83,19 @@ const DriveTable = () => {
               <th className="py-2 pl-2 pr-4 sm:table-cell">Payment Schedule</th>
             </tr>
           </thead>
-          <tbody>
-            {DriveTable.map((props) => (
-              <tr key={props.id} className="border-b">
-                <td className="py-2 pl-2 pr-4 sm:table-cell">{props.id}</td>
-                <td className="py-2 pl-2 pr-4">{props.Vendor}</td>
-                <td className="py-2 pl-2 pr-4">{props.TruckName}</td>
-                <td className="py-2 pl-2 pr-4">{props.Campaign}</td>
-                <td className="py-2 pl-2 pr-4 sm:table-cell">
-                  {props.StartDate}
-                </td>
-                <td className="py-2 pl-2 pr-4 sm:table-cell pmtSchedule">
-                  <img src={props.icon} alt="" />
-                  {props.PaymentSchedule}
-                </td>
-              </tr>
-            ))}
-          </tbody>
+          <tbody>{displayData}</tbody>
         </table>
+
+        <ReactPaginate
+          previousLabel={"Prev"}
+          nextLabel={"Next"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"paginationButtons"}
+          previousLinkClassName={"previousButton"}
+          nextLinkClassName={"nextButton"}
+          activeClassName={"paginationActive"}
+        />
       </div>
       <DriveTable1 />
     </>

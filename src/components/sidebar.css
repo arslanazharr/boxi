@@ -84,3 +84,10 @@ li .link:hover {
     padding-left: 12rem !important;
   }
 }
+
+input {
+  padding-left: 53px !important;
+}
+input::placeholder {
+  padding-left: 0px !important;
+}

@@ -19,8 +19,13 @@ export const fetchDriveCard = () => {
 export const fetchDriveTable = () => {
   return async (dispatch) => {
     try {
+      // const params = {
+      //   page: 1,
+      //   limit: 10,
+      // };
       const response = await axios.get(
-        "https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable"
+        "https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable",
+        // { params }
       );
 
       dispatch(showTables(response.data));

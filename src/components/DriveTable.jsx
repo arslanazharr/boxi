@@ -13,14 +13,14 @@ const DriveTable = () => {
   const DriveTable = useSelector((state) => state.allData.driveTable);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchDriveTable());
-  }, []);
-
   const [pageNumber, setPageNumber] = useState(1);
 
   const limit = 10;
   const pageVisited = (pageNumber - 1) * limit;
+
+  useEffect(() => {
+    dispatch(fetchDriveTable(pageNumber, limit));
+  }, [pageNumber, limit]);
 
   const displayData = DriveTable.slice(pageVisited, pageVisited + limit).map(
     (data) => {

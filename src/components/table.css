@@ -173,3 +173,10 @@ h2 {
 .buttonRight:active button {
   background-color: #97e4be;
 }
+
+/* sorting css */
+
+th span {
+  margin-left: 5px;
+  cursor: pointer;
+}

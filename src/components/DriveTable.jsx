@@ -13,39 +13,66 @@ const DriveTable = () => {
   const driveTableData = useSelector((state) => state.allData.driveTable);
   const dispatch = useDispatch();
 
+  const [data, setData] = useState([]);
+
   const [pageNumber, setPageNumber] = useState(1);
+  const [sortBy, setSortBy] = useState("id");
   const [sortOrder, setSortOrder] = useState("asc");
 
-  const limit = 10;
-  const pageVisited = (pageNumber - 1) * limit;
-  const pageCount = Math.ceil(driveTableData.length / limit);
+  const _limit = 10;
+  const pageVisited = (pageNumber - 1) * _limit;
+  const pageCount = 10;
 
   useEffect(() => {
-    dispatch(fetchDriveTable(pageNumber, limit));
-  }, [pageNumber, limit]);
+    fetchData();
+  }, [pageNumber, _limit, sortBy, sortOrder]);
+
+  // useEffect(() => {
+  //   const _sort = sortBy;
+  //   setSortOrder((sortBy) => sortBy === _sort ? 'desc' : 'asc');
+  // }, [sortBy])
+
+  const fetchData = () => {
+    dispatch(fetchDriveTable(pageNumber, _limit, sortBy, sortOrder));
+  };
 
   const handleSort = () => {
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
   };
 
-  const sortedData = driveTableData
-    .slice(pageVisited, pageVisited + limit)
-    .sort((a, b) => (sortOrder === "asc" ? a.id - b.id : b.id - a.id));
-
-  const displayData = sortedData.map((data) => {
-    return (
-      <tr key={data.id} className="border-b">
-        <td className="py-2 pl-2 pr-4 sm:table-cell">{data.id}</td>
-        <td className="py-2 pl-2 pr-4">{data.Vendor}</td>
-        <td className="py-2 pl-2 pr-4">{data.TruckName}</td>
-        <td className="py-2 pl-2 pr-4">{data.Campaign}</td>
-        <td className="py-2 pl-2 pr-4 sm:table-cell">{data.StartDate}</td>
-        <td className="py-2 pl-2 pr-4 sm:table-cell pmtSchedule">
-          {data.PaymentSchedule}
-        </td>
-      </tr>
+  useEffect(() => {
+    setData(
+      driveTableData.map((data) => {
+        return (
+          <tr key={data.id} className="border-b">
+            <td className="py-2 pl-2 pr-4 sm:table-cell">{data.id}</td>
+            <td className="py-2 pl-2 pr-4">{data.Vendor}</td>
+            <td className="py-2 pl-2 pr-4">{data.TruckName}</td>
+            <td className="py-2 pl-2 pr-4">{data.Campaign}</td>
+            <td className="py-2 pl-2 pr-4 sm:table-cell">{data.StartDate}</td>
+            <td className="py-2 pl-2 pr-4 sm:table-cell pmtSchedule">
+              {data.PaymentSchedule}
+            </td>
+          </tr>
+        );
+      })
     );
-  });
+  }, [driveTableData]);
+
+  // const displayData = sortedData.map((data) => {
+  //   return (
+  //     <tr key={data.id} className="border-b">
+  //       <td className="py-2 pl-2 pr-4 sm:table-cell">{data.id}</td>
+  //       <td className="py-2 pl-2 pr-4">{data.Vendor}</td>
+  //       <td className="py-2 pl-2 pr-4">{data.TruckName}</td>
+  //       <td className="py-2 pl-2 pr-4">{data.Campaign}</td>
+  //       <td className="py-2 pl-2 pr-4 sm:table-cell">{data.StartDate}</td>
+  //       <td className="py-2 pl-2 pr-4 sm:table-cell pmtSchedule">
+  //         {data.PaymentSchedule}
+  //       </td>
+  //     </tr>
+  //   );
+  // });
 
   const increasePage = () => {
     if (pageNumber < pageCount) {
@@ -93,16 +120,38 @@ const DriveTable = () => {
                 className="py-2 pl-2 pr-4 sm:table-cell sortable"
                 onClick={handleSort}
               >
-                # {sortOrder === "asc" ? <span>▲</span> : <span>▼</span>}
+                #{" "}
+                {sortBy === "id" ? (
+                  sortOrder === "asc" ? (
+                    <span>▲</span>
+                  ) : (
+                    <span>▼</span>
+                  )
+                ) : null}
               </th>
-              <th className="py-2 pl-2 pr-4">Vendor</th>
+              <th
+                onClick={() => {
+                  setSortBy("Vendor");
+                  setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+                }}
+                className="py-2 pl-2 pr-4"
+              >
+                Vendor
+                {sortBy === "Vendor" ? (
+                  sortOrder === "asc" ? (
+                    <span>▲</span>
+                  ) : (
+                    <span>▼</span>
+                  )
+                ) : null}
+              </th>
               <th className="py-2 pl-2 pr-4">Truck Name</th>
               <th className="py-2 pl-2 pr-4">Campaign</th>
               <th className="py-2 pl-2 pr-4 sm:table-cell">Start Date</th>
               <th className="py-2 pl-2 pr-4 sm:table-cell">Payment Schedule</th>
             </tr>
           </thead>
-          <tbody>{displayData}</tbody>
+          <tbody>{data}</tbody>
         </table>
 
         <div className="flex justify-end mt-5 align-middle">
@@ -118,7 +167,7 @@ const DriveTable = () => {
                 />
               </button>
             </div>
-            <div className="flex items-center text-sm">{`${pageNumber} - ${pageCount}`}</div>
+            <div className="flex items-center text-sm">{`${pageNumber}`}</div>
             <div className="buttonRight">
               <button
                 className="p-2 w-7 h-7 rounded-full bg-green-300 hover:bg-green-500 transition-all flex items-center"

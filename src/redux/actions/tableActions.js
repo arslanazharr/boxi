@@ -9,19 +9,20 @@ export const fetchDriveCard = () => {
       );
 
       dispatch(showDriveCards(response.data));
-      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
   };
 };
 
-export const fetchDriveTable = (pageNumber, limit) => {
+export const fetchDriveTable = (pageNumber, _limit, sortBy, sortOrder) => {
   return async (dispatch) => {
     try {
       const params = {
         page: pageNumber,
-        Limit: limit,
+        limit: _limit,
+        sortBy,
+        order: sortOrder
       };
       const response = await axios.get(
         "https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable",
@@ -29,10 +30,12 @@ export const fetchDriveTable = (pageNumber, limit) => {
         { params }
       );
 
+      console.log(response.data);
       dispatch(showTables(response.data));
     } catch (error) {
       console.log(error);
     }
+    console.log("PageNumber: ", pageNumber);
   };
 };
 

@@ -15,18 +15,18 @@ export const fetchDriveCard = () => {
   };
 };
 
-export const fetchDriveTable = (pageNumber, _limit, sortBy, sortOrder) => {
+export const fetchDriveTable = (page, limit, sortBy, sortOrder) => {
   return async (dispatch) => {
     try {
       const params = {
-        page: pageNumber,
-        limit: _limit,
+        page,
+        limit,
         sortBy,
-        order: sortOrder
+        order: sortOrder,
       };
       const response = await axios.get(
         "https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable",
-        // `https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable?page=${pageNumber}&limit=${limit}`
+        // `https://6471f1e36a9370d5a41adaa8.mockapi.io/drivetable?page=${page}&limit=${limit}`,
         { params }
       );
 
@@ -35,7 +35,7 @@ export const fetchDriveTable = (pageNumber, _limit, sortBy, sortOrder) => {
     } catch (error) {
       console.log(error);
     }
-    console.log("PageNumber: ", pageNumber);
+    console.log("PageNumber: ", page);
   };
 };
 

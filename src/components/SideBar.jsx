@@ -223,9 +223,7 @@ const Sidebar = () => {
 
           <main className="py-10">
             <Routes>
-              <Route path="/" element={<Content />}>
-                <Route exact path="/boxi" element={<Content />} />
-              </Route>
+              <Route exact path="/boxi" element={<Content />} />
               <Route exact path="/drive" element={<Drive />} />
               <Route exact path="*" element={<Error />} />
             </Routes>

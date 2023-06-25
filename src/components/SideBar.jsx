@@ -27,7 +27,7 @@ const Ldata = [
     name: "Campaigns",
     icon: faEarthAmericas,
     arrow: faCaretDown,
-    path: "/",
+    path: "/campaign",
   },
   {
     name: "Drive",
@@ -223,7 +223,7 @@ const Sidebar = () => {
 
           <main className="py-10">
             <Routes>
-              <Route exact path="/boxi" element={<Content />} />
+              <Route exact path="/campaign" element={<Content />} />
               <Route exact path="/drive" element={<Drive />} />
               <Route exact path="*" element={<Error />} />
             </Routes>

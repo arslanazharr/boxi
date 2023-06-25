@@ -19,6 +19,7 @@ import { NavLink } from "react-router-dom";
 import Drive from "./Drive";
 import { Route, Routes } from "react-router-dom";
 import Error from "./ErrorPage";
+import BoxiHP from "./BoxiHP";
 
 import "./sidebar.css";
 
@@ -27,18 +28,18 @@ const Ldata = [
     name: "Campaigns",
     icon: faEarthAmericas,
     arrow: faCaretDown,
-    path: "/campaign",
+    path: "/campaign/boxi",
   },
   {
     name: "Drive",
     icon: faFolderOpen,
     arrow: faCaretDown,
-    path: "/drive",
+    path: "/drive/boxi",
   },
-  { name: "Boxi Team", icon: faPeopleGroup, path: "boxiteam" },
-  { name: "Production", icon: faStar, path: "/production" },
-  { name: "Fix List", icon: faFileLines, path: "/fixlist" },
-  { name: "Settings", icon: faGear, path: "/settings" },
+  { name: "Boxi Team", icon: faPeopleGroup, path: "/boxiteam/boxi" },
+  { name: "Production", icon: faStar, path: "/production/boxi" },
+  { name: "Fix List", icon: faFileLines, path: "/fixlist/boxi" },
+  { name: "Settings", icon: faGear, path: "/settings/boxi" },
 ];
 
 function classNames(...classes) {
@@ -113,7 +114,7 @@ const Sidebar = () => {
                   {/* Sidebar component, swap this element with another sidebar if you like */}
                   <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-green-600 main-div">
                     <div className="flex h-16 shrink-0 items-center">
-                      <NavLink to="/">
+                      <NavLink to="/boxi">
                         <img
                           className="h-8 w-auto logo"
                           src={logo}
@@ -165,7 +166,7 @@ const Sidebar = () => {
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-auto lg:flex-col">
           <div className="flex grow flex-col overflow-y-auto bg-green-600 main-div">
             <div className="flex h-16 shrink-0 items-center">
-              <NavLink to="/">
+              <NavLink to="/boxi">
                 {" "}
                 <img
                   className="h-8 w-auto logo"
@@ -223,8 +224,9 @@ const Sidebar = () => {
 
           <main className="py-10">
             <Routes>
-              <Route exact path="/campaign" element={<Content />} />
-              <Route exact path="/drive" element={<Drive />} />
+              <Route exact path="/boxi" element={<BoxiHP />} />
+              <Route exact path="/campaign/boxi" element={<Content />} />
+              <Route exact path="/drive/boxi" element={<Drive />} />
               <Route exact path="*" element={<Error />} />
             </Routes>
           </main>
